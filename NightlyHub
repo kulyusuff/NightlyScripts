@@ -1,0 +1,51 @@
+local lib = loadstring(game:HttpGet"https://raw.githubusercontent.com/kulyusuff/NightlyScripts/main/ui")()
+
+local win = lib:Window("Nightly Cheats",Color3.fromRGB(44, 120, 224), Enum.KeyCode.RightControl)
+
+local tab = win:Tab("ScriptHub")
+local tab1 = win:Tab("Oyuncu")
+local changeclr = win:Tab("UI Rengini Degisdir")
+
+tab:Label("Adminlik Scriptleri")
+
+tab:Button("Infinite Yield", function()
+loadstring(game:HttpGet"https://raw.githubusercontent.com/kulyusuff/NightlyScripts/main/infiniteyield")()
+end)
+
+tab:Button("Fates Admin", function()
+loadstring(game:HttpGet"https://raw.githubusercontent.com/kulyusuff/NightlyScripts/main/fates")()
+end)
+
+tab:Button("Reviz Admin", function()
+loadstring(game:HttpGet"https://raw.githubusercontent.com/kulyusuff/NightlyScripts/main/reviz")()
+end)
+
+tab:Label("Eglence Scriptleri")
+
+tab:Button("Fling", function()
+loadstring(game:HttpGet"https://raw.githubusercontent.com/kulyusuff/NightlyScripts/main/fling")()
+end)
+
+tab:Label("Oyun Scriptleri")
+
+tab:Button("WordBomb", function()
+loadstring(game:HttpGet"https://raw.githubusercontent.com/kulyusuff/NightlyScripts/main/WordBomb")()
+end)
+
+tab:Label("Diger Hublar")
+
+tab:Button("Owl Hub", function()
+loadstring(game:HttpGet"https://raw.githubusercontent.com/CriShoux/OwlHub/master/OwlHub.txt")()
+end)
+
+tab1:Slider("Yurume Hizi",0,250,16, function(t)
+   game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = t
+end)
+
+tab1:Slider("Ziplama Gucu",0,250,50, function(t)
+   game.Players.LocalPlayer.Character.Humanoid.JumpPower = t
+end)
+
+changeclr:Colorpicker("UI Rengini Degisdir",Color3.fromRGB(44, 120, 224), function(t)
+lib:ChangePresetColor(Color3.fromRGB(t.R * 255, t.G * 255, t.B * 255))
+end)
